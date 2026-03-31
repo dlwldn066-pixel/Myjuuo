@@ -8,7 +8,7 @@ import './Home.css';
 const vibesImages = [
   "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1518972553106-90ee92cb1bf3?q=80&w=600&auto=format&fit=crop"
+  "https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=600&auto=format&fit=crop"
 ];
 
 const Home = () => {

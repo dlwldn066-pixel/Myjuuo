@@ -114,12 +114,13 @@
 }
 
 .post-bento-title {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.4;
   color: #fff;
   word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .blog-large .post-bento-title {
