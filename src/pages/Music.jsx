@@ -5,11 +5,11 @@ import PageTransition from '../components/PageTransition';
 import './Music.css';
 
 const MOCK_PLAYLIST = [
-  { id: 1, title: 'CHIHIRO', artist: 'Billie Eilish', cover: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=300&auto=format&fit=crop', duration: '4:59' },
-  { id: 2, title: 'Snooze', artist: 'SZA', cover: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=300&auto=format&fit=crop', duration: '3:21' },
-  { id: 3, title: 'Get You (feat. Kali Uchis)', artist: 'Daniel Caesar', cover: 'https://images.unsplash.com/photo-1518972553106-90ee92cb1bf3?q=80&w=300&auto=format&fit=crop', duration: '4:38' },
-  { id: 4, title: 'Pink + White', artist: 'Frank Ocean', cover: 'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=300&auto=format&fit=crop', duration: '3:04' },
-  { id: 5, title: 'Heartbreak Anniversary', artist: 'Giveon', cover: 'https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=300&auto=format&fit=crop', duration: '3:18' },
+  { id: 1, title: 'CHIHIRO', artist: 'Billie Eilish', cover: '/vibe_6.jpg', duration: '4:59' },
+  { id: 2, title: 'Snooze', artist: 'SZA', cover: '/vibe_7.jpg', duration: '3:21' },
+  { id: 3, title: 'Get You (feat. Kali Uchis)', artist: 'Daniel Caesar', cover: '/vibe_8.jpg', duration: '4:38' },
+  { id: 4, title: 'Pink + White', artist: 'Frank Ocean', cover: '/vibe_9.jpg', duration: '3:04' },
+  { id: 5, title: 'Heartbreak Anniversary', artist: 'Giveon', cover: '/vibe_10.jpg', duration: '3:18' },
 ];
 
 const Music = () => {

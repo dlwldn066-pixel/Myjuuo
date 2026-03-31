@@ -4,12 +4,12 @@ import PageTransition from '../components/PageTransition';
 import './Gallery.css';
 
 const galleryImages = [
-  "/neon.png",
-  "/cyber.png",
-  "/neon.png",
-  "/cyber.png",
-  "/neon.png",
-  "/cyber.png"
+  "/vibe_0.jpg",
+  "/vibe_1.jpg",
+  "/vibe_2.jpg",
+  "/vibe_3.jpg",
+  "/vibe_4.jpg",
+  "/vibe_5.jpg"
 ];
 
 const galleryItems = [
