@@ -20,10 +20,34 @@
 }
 
 .logo {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.rnb-logo-nav {
+  font-family: 'Playfair Display', 'Nanum Myeongjo', serif;
+  font-style: italic;
+  font-size: 1.8rem;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -2px;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(129, 0, 255, 0.6);
+  transition: all 0.4s ease;
+  display: inline-block;
+}
+
+.rnb-logo-nav span {
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px var(--neon-purple),
+    0 0 40px var(--neon-pink),
+    0 0 60px var(--neon-pink);
+}
+
+.rnb-logo-nav:hover {
+  transform: scale(1.02);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(129, 0, 255, 1);
 }
 
 .nav-links {

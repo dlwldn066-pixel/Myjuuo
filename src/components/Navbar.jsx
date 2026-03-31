@@ -26,8 +26,8 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'glass-nav scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="logo">
-          지우의 <span className="text-neon-cyan">일상</span>
+        <Link to="/" className="logo rnb-logo-nav">
+          지우의 <span>일상</span>
         </Link>
         <ul className="nav-links">
           {navLinks.map((link) => (
