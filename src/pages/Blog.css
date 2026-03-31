@@ -75,8 +75,8 @@
 
 .blog-card-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin-bottom: auto; /* Push content down */
 }
 
@@ -86,12 +86,17 @@
   gap: 0.5rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .bento-tags-wrapper {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 /* Reusing gallery capsule tag style for consistency */
