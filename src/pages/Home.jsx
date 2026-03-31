@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Disc } from 'lucide-react';
+import { ArrowRight, Disc } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import './Home.css';
@@ -36,7 +36,7 @@ const Home = () => {
             </motion.span>
           </h1>
           <p className="hero-subtitle">
-            Welcome to Jiwoo's digital space. Capturing moments, ideas, and pure aesthetics. <Sparkles className="inline-icon text-neon-cyan" size={18} />
+            Welcome to Jiwoo's digital space. Capturing moments, ideas, and pure aesthetics.
           </p>
           
           <div className="hero-actions">
