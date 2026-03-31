@@ -78,7 +78,7 @@ const Home = () => {
           Check out my latest open-source contributions, projects, and daily code logs.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="btn btn-primary">
+          <a href="https://github.com/dlwldn066-pixel/Myjuuo" target="_blank" rel="noreferrer" className="btn btn-primary">
             Visit My GitHub <ArrowRight size={20} />
           </a>
         </div>
