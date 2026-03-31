@@ -16,24 +16,23 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="hero-content"
         >
-          <h1 className="hero-title rnb-glow">
-            <motion.span 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 1.5, ease: "easeOut" }}
-              style={{ display: 'inline-block' }}
+          <h1 className="hero-title" style={{ overflow: 'hidden' }}>
+            <motion.div 
+              className="text-fluid"
+              initial={{ y: "100%", opacity: 0, rotateX: -20 }}
+              animate={{ y: 0, opacity: 1, rotateX: 0 }}
+              transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
             >
               Creative
-            </motion.span> <br />
-            <motion.span
-              className="neon-flicker-text text-neon-purple"
-              initial={{ opacity: 0, filter: "blur(10px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
-              style={{ display: 'inline-block' }}
+            </motion.div>
+            <motion.div
+              className="text-gradient hip-wave"
+              initial={{ y: "100%", opacity: 0, rotateX: -20 }}
+              animate={{ y: 0, opacity: 1, rotateX: 0 }}
+              transition={{ delay: 0.2, duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
             >
               Daily Record
-            </motion.span>
+            </motion.div>
           </h1>
           <p className="hero-subtitle">
             Welcome to Jiwoo's digital space. Capturing moments, ideas, and pure aesthetics.

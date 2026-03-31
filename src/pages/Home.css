@@ -21,36 +21,25 @@
   letter-spacing: -2px;
 }
 
-/* R&B Typography Vibes */
-.rnb-glow {
-  text-shadow: 0 0 40px rgba(129, 0, 255, 0.15);
+/* Sleek Hip Typography Vibes */
+.text-fluid {
+  display: block;
+  transform-origin: bottom center;
 }
 
-.neon-flicker-text {
-  color: #fff;
-  text-shadow: 
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px var(--neon-purple),
-    0 0 40px var(--neon-purple),
-    0 0 80px var(--neon-pink);
-  animation: 
-    rnb-pulse 4s ease-in-out infinite alternate, 
-    slight-flicker 10s infinite;
+.hip-wave {
+  display: block;
+  background: linear-gradient(90deg, #fff, var(--neon-cyan), var(--neon-purple), #fff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine-wave 6s ease-in-out infinite alternate;
 }
 
-@keyframes rnb-pulse {
-  0% { 
-    text-shadow: 0 0 5px #fff, 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple), 0 0 80px var(--neon-pink); 
-  }
-  100% { 
-    text-shadow: 0 0 10px #fff, 0 0 30px var(--neon-purple), 0 0 60px var(--neon-pink), 0 0 100px var(--neon-pink); 
-  }
-}
-
-@keyframes slight-flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; filter: saturate(100%); }
-  20%, 24%, 55% { opacity: 0.5; filter: saturate(50%); text-shadow: 0 0 5px var(--neon-purple); }
+@keyframes shine-wave {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .hero-subtitle {
