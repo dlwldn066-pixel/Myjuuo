@@ -5,10 +5,11 @@ import PageTransition from '../components/PageTransition';
 import './Music.css';
 
 const MOCK_PLAYLIST = [
-  { id: 1, title: 'Blinding Lights', artist: 'The Weeknd', cover: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=300&auto=format&fit=crop', duration: '3:20' },
-  { id: 2, title: 'Swim', artist: 'Chase Atlantic', cover: 'https://images.unsplash.com/photo-1518972553106-90ee92cb1bf3?q=80&w=300&auto=format&fit=crop', duration: '3:48' },
-  { id: 3, title: 'Call Out My Name', artist: 'The Weeknd', cover: 'https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=300&auto=format&fit=crop', duration: '3:48' },
-  { id: 4, title: 'Into It', artist: 'Chase Atlantic', cover: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=300&auto=format&fit=crop', duration: '3:14' },
+  { id: 1, title: 'CHIHIRO', artist: 'Billie Eilish', cover: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=300&auto=format&fit=crop', duration: '4:59' },
+  { id: 2, title: 'Snooze', artist: 'SZA', cover: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=300&auto=format&fit=crop', duration: '3:21' },
+  { id: 3, title: 'Get You (feat. Kali Uchis)', artist: 'Daniel Caesar', cover: 'https://images.unsplash.com/photo-1518972553106-90ee92cb1bf3?q=80&w=300&auto=format&fit=crop', duration: '4:38' },
+  { id: 4, title: 'Pink + White', artist: 'Frank Ocean', cover: 'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=300&auto=format&fit=crop', duration: '3:04' },
+  { id: 5, title: 'Heartbreak Anniversary', artist: 'Giveon', cover: 'https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=300&auto=format&fit=crop', duration: '3:18' },
 ];
 
 const Music = () => {
@@ -18,48 +19,59 @@ const Music = () => {
     <PageTransition className="music-page-container">
       <div className="music-header">
         <h1 className="title">
-          Today's <span className="text-neon-purple">Music</span>
+          Midnight <span className="text-neon-orange">Vinyl</span>
         </h1>
-        <p className="subtitle text-secondary">The perfect R&B and Synthwave playlist for late-night coding.</p>
+        <p className="subtitle text-secondary">A curated collection of deep R&B and late-night vibes.</p>
       </div>
 
       <div className="music-content-wrapper">
-        {/* Main Player */}
+        {/* Main Turntable Player */}
         <motion.div 
           className="main-player glass"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         >
           <div className="player-background-glow"></div>
           
           <div className="album-art-container">
-            <div className="album-disk">
-              <img 
-                src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop" 
-                alt="Starboy Album" 
-                className={`spin-disk-main ${isPlaying ? 'spinning' : ''}`} 
-              />
-              <div className="disk-center"></div>
+            {/* The Vinyl Record */}
+            <div className={`vinyl-record ${isPlaying ? 'spinning' : ''}`}>
+               <div className="vinyl-groove-1"></div>
+               <div className="vinyl-groove-2"></div>
+               <div className="vinyl-groove-3"></div>
+               <img 
+                 src={MOCK_PLAYLIST[0].cover} 
+                 alt="Vinyl Label" 
+                 className="vinyl-label" 
+               />
+               <div className="vinyl-hole"></div>
+            </div>
+            
+            {/* Turntable Tonearm (Visual detail) */}
+            <div className={`tonearm ${isPlaying ? 'tonearm-playing' : ''}`}>
+               <div className="tonearm-pivot"></div>
+               <div className="tonearm-wand"></div>
+               <div className="tonearm-headshell"></div>
             </div>
           </div>
 
           <div className="player-info">
             <div className="track-headers">
-              <h2 className="current-title">Starboy</h2>
-              <Heart className="heart-icon text-neon-pink" size={24} />
+              <h2 className="current-title">{MOCK_PLAYLIST[0].title}</h2>
+              <Heart className="heart-icon text-neon-orange" size={24} />
             </div>
-            <p className="current-artist">The Weeknd, Daft Punk</p>
+            <p className="current-artist">{MOCK_PLAYLIST[0].artist}</p>
           </div>
 
           <div className="player-controls-container">
             <div className="progress-bar-container">
               <span className="time">1:18</span>
               <div className="progress-bar-track">
-                <div className="progress-bar-fill"></div>
-                <div className="progress-handle"></div>
+                <div className="progress-bar-fill-orange"></div>
+                <div className="progress-handle-orange"></div>
               </div>
-              <span className="time">3:50</span>
+              <span className="time">{MOCK_PLAYLIST[0].duration}</span>
             </div>
 
             <div className="controls">
@@ -67,7 +79,7 @@ const Music = () => {
               <button className="control-btn"><SkipBack size={28} /></button>
               
               <button 
-                className="play-btn" 
+                className="play-btn-orange" 
                 onClick={() => setIsPlaying(!isPlaying)}
               >
                 {isPlaying ? <Pause size={32} fill="currentColor" /> : <Play size={32} fill="currentColor" />}
@@ -91,8 +103,8 @@ const Music = () => {
             {MOCK_PLAYLIST.map((track, index) => (
               <motion.div 
                 key={track.id} 
-                className="track-item"
-                whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', scale: 1.01 }}
+                className={`track-item ${index === 0 ? 'playing-track' : ''}`}
+                whileHover={{ backgroundColor: 'rgba(255, 94, 0, 0.08)', scale: 1.01 }}
               >
                 <div className="track-number">{index + 1}</div>
                 <div className="track-cover">
