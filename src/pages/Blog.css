@@ -94,9 +94,9 @@
   top: 2.5rem;
   right: 2.5rem;
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 /* Reusing gallery capsule tag style for consistency */
