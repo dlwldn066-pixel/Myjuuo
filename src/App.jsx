@@ -11,7 +11,6 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
 import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
 
 // Main App Component with Page Transitions
 function AnimatedRoutes() {
@@ -26,7 +25,6 @@ function AnimatedRoutes() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Post />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
       </AnimatePresence>
     </div>

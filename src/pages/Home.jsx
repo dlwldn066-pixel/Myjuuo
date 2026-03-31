@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Disc } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import './Home.css';
@@ -8,6 +8,7 @@ import './Home.css';
 const Home = () => {
   return (
     <PageTransition className="home-container">
+      {/* 1. Hero Section */}
       <section className="hero">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
@@ -20,7 +21,7 @@ const Home = () => {
             <span className="text-gradient">Daily Record</span>
           </h1>
           <p className="hero-subtitle">
-            Welcome to Jiwoo's digital space. Capturing moments, ideas, and everything neon. <Sparkles className="inline-icon text-neon-cyan" />
+            Welcome to Jiwoo's digital space. Capturing moments, ideas, and pure aesthetics. <Sparkles className="inline-icon text-neon-cyan" size={18} />
           </p>
           
           <div className="hero-actions">
@@ -34,51 +35,83 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <section className="featured glass">
+      {/* 2. Bento Grid Section (2026 Trend) */}
+      <section className="bento-section">
+        <h2 className="section-title">Life & <span className="text-neon-cyan">Inspo</span></h2>
+        <div className="bento-grid">
+          {/* Bento 1: Photo */}
+          <motion.div 
+            className="bento-card bento-photo glass"
+            whileHover={{ y: -5, scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <div className="bento-photo-wrapper">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Cyberpunk Setup" />
+            </div>
+          </motion.div>
+          
+          {/* Bento 2: Quote */}
+          <motion.div 
+            className="bento-card bento-quote glass"
+            whileHover={{ y: -5, scale: 1.02 }}
+          >
+            <h3>"Simplicity is the soul of efficiency."</h3>
+            <p className="text-neon-purple">- Austin Freeman</p>
+          </motion.div>
+
+          {/* Bento 3: Currently Playing (Music) */}
+          <motion.div 
+            className="bento-card bento-music glass"
+            whileHover={{ y: -5, scale: 1.02 }}
+          >
+            <div className="music-player">
+              <div className="disk-wrapper">
+                <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=500&auto=format&fit=crop" alt="Album Cover" className="spin-disk" />
+                <div className="disk-hole"></div>
+              </div>
+              <div className="music-info">
+                <div className="now-playing">
+                  <span className="playing-icon"><Disc size={12} className="spin-fast" /></span>
+                  Now Playing
+                </div>
+                <h4>Starboy</h4>
+                <p>The Weeknd, Daft Punk</p>
+                <div className="music-progress">
+                  <div className="progress-bar"><div className="progress-fill"></div></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3. Latest Posts (Advanced Glassmorphism) */}
+      <section className="featured">
         <h2 className="section-title">Latest <span className="text-neon-green">Vibes</span></h2>
         <div className="featured-grid">
           {[1, 2, 3].map((item) => (
             <motion.div 
               key={item} 
               className="featured-card glass"
-              whileHover={{ y: -10, scale: 1.02 }}
+              whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 40px rgba(0,0,0,0.8)" }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="card-mock-img"></div>
+              <div className="card-mock-img bg-variant-dark"></div>
               <div className="card-content">
                 <h3>Midnight Thoughts #{item}</h3>
-                <p>Lost in the neon lights and endless code...</p>
-                <span className="read-more text-neon-pink">Explore →</span>
+                <p>Lost in the dark aesthetics and endless code...</p>
+                <Link to={`/blog/${item}`} className="read-more text-neon-pink">Explore →</Link>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      <section className="tech-arsenal glass">
-        <h2 className="section-title">Tech <span className="text-neon-cyan">Arsenal</span></h2>
-        <div className="skills-container">
-          <div className="skill-item">
-            <div className="skill-info"><span>React & Vite</span> <span className="text-neon-pink">90%</span></div>
-            <div className="skill-bar"><motion.div initial={{width:0}} whileInView={{width:'90%'}} viewport={{once:true}} transition={{duration: 1, ease: 'easeOut'}} className="skill-fill neon-pink-bg"></motion.div></div>
-          </div>
-          <div className="skill-item">
-            <div className="skill-info"><span>Vanilla CSS / Animation</span> <span className="text-neon-green">85%</span></div>
-            <div className="skill-bar"><motion.div initial={{width:0}} whileInView={{width:'85%'}} viewport={{once:true}} transition={{duration: 1.2, ease: 'easeOut'}} className="skill-fill neon-green-bg"></motion.div></div>
-          </div>
-          <div className="skill-item">
-            <div className="skill-info"><span>JavaScript (ES6+)</span> <span className="text-neon-cyan">80%</span></div>
-            <div className="skill-bar"><motion.div initial={{width:0}} whileInView={{width:'80%'}} viewport={{once:true}} transition={{duration: 1.4, ease: 'easeOut'}} className="skill-fill neon-cyan-bg"></motion.div></div>
-          </div>
-        </div>
-      </section>
-
+      {/* 4. Github Connect */}
       <section className="github-connect glass">
-        <h2 className="section-title" style={{textAlign: 'center'}}>Code & <span className="text-neon-purple">Commits</span></h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', textAlign: 'center' }}>
-          Check out my latest open-source contributions, projects, and daily code logs.
-        </p>
+        <h2 className="section-title" style={{textAlign: 'center', marginBottom: '1rem'}}>Connect & <span className="text-neon-pink">Code</span></h2>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <a href="https://github.com/dlwldn066-pixel/Myjuuo" target="_blank" rel="noreferrer" className="btn btn-primary">
+          <a href="https://github.com/dlwldn066-pixel/Myjuuo" target="_blank" rel="noreferrer" className="btn btn-primary" style={{marginTop: '1rem'}}>
             Visit My GitHub <ArrowRight size={20} />
           </a>
         </div>
