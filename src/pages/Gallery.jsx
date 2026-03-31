@@ -3,6 +3,15 @@ import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
 import './Gallery.css';
 
+const galleryImages = [
+  "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop", 
+  "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=800&auto=format&fit=crop", 
+  "https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1518972553106-90ee92cb1bf3?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1542485599-4cbea9f90fe2?q=80&w=800&auto=format&fit=crop"
+];
+
 const galleryItems = [
   { id: 1, title: 'Neon Nights', type: 'PHOTOGRAPHY', isLarge: true },
   { id: 2, title: 'Cyber Setup', type: 'WORKSPACE', isLarge: false },
@@ -28,7 +37,9 @@ const Gallery = () => {
             className={`gallery-bento-item glass ${item.isLarge ? 'bento-large' : 'bento-normal'}`}
             whileHover={{ y: -5, scale: 1.01 }}
           >
-            <div className={`gallery-mock-img bg-${item.id % 3 + 1}`}></div>
+            <div className="gallery-mock-img">
+              <img src={galleryImages[index]} alt={item.title} />
+            </div>
             <div className="gallery-info-overlay">
               <span className="bento-tag">{item.type}</span>
               <h3 className="bento-title">{item.title}</h3>

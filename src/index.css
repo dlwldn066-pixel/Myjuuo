@@ -163,8 +163,8 @@ button {
 }
 
 /* Layout Utilities */
-main.content-wrapper {
+.content-wrapper {
   flex: 1;
-  padding-top: 100px;
+  padding-top: 140px;
   padding-bottom: 60px;
 }
