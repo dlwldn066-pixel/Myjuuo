@@ -16,9 +16,24 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="hero-content"
         >
-          <h1 className="hero-title">
-            Creative <br />
-            <span className="text-gradient">Daily Record</span>
+          <h1 className="hero-title rnb-glow">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 1.5, ease: "easeOut" }}
+              style={{ display: 'inline-block' }}
+            >
+              Creative
+            </motion.span> <br />
+            <motion.span
+              className="neon-flicker-text text-neon-purple"
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
+              style={{ display: 'inline-block' }}
+            >
+              Daily Record
+            </motion.span>
           </h1>
           <p className="hero-subtitle">
             Welcome to Jiwoo's digital space. Capturing moments, ideas, and pure aesthetics. <Sparkles className="inline-icon text-neon-cyan" size={18} />
