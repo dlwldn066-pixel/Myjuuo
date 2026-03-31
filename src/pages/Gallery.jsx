@@ -4,12 +4,12 @@ import PageTransition from '../components/PageTransition';
 import './Gallery.css';
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop", 
-  "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=800&auto=format&fit=crop", 
-  "https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1518972553106-90ee92cb1bf3?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1604005934520-dd53b6fa0f57?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1542485599-4cbea9f90fe2?q=80&w=800&auto=format&fit=crop"
+  "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1550684376-ef3b244d25ce?q=80&w=800&auto=format&fit=crop"
 ];
 
 const galleryItems = [
