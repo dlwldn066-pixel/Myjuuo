@@ -269,10 +269,21 @@
 .card-mock-img {
   height: 200px;
   border-bottom: 1px solid var(--glass-border);
+  overflow: hidden;
+  position: relative;
 }
 
-.bg-variant-dark {
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), transparent);
+.vibe-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  opacity: 0.8;
+}
+
+.featured-card:hover .vibe-image {
+  transform: scale(1.05);
+  opacity: 1;
 }
 
 .card-content {

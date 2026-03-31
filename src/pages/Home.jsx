@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import './Home.css';
 
+const vibesImages = [
+  "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1518972553106-90ee92cb1bf3?q=80&w=600&auto=format&fit=crop"
+];
+
 const Home = () => {
   return (
     <PageTransition className="home-container">
@@ -103,14 +109,16 @@ const Home = () => {
       <section className="featured">
         <h2 className="section-title">Latest <span className="text-neon-green">Vibes</span></h2>
         <div className="featured-grid">
-          {[1, 2, 3].map((item) => (
+          {[1, 2, 3].map((item, index) => (
             <motion.div 
               key={item} 
               className="featured-card glass"
               whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 40px rgba(0,0,0,0.8)" }}
               transition={{ duration: 0.3 }}
             >
-              <div className="card-mock-img bg-variant-dark"></div>
+              <div className="card-mock-img">
+                <img src={vibesImages[index]} alt={`Vibe ${item}`} className="vibe-image" />
+              </div>
               <div className="card-content">
                 <h3>Midnight Thoughts #{item}</h3>
                 <p>Lost in the dark aesthetics and endless code...</p>
