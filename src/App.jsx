@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ParallaxParticles from './components/ParallaxParticles';
 
 // Pages
 import Home from './pages/Home';
@@ -42,6 +43,7 @@ function App() {
         <div className="mesh-bg-aurora-2"></div>
         <div className="mesh-bg-aurora-3"></div>
       </div>
+      <ParallaxParticles />
       
       <Navbar />
       <AnimatedRoutes />
