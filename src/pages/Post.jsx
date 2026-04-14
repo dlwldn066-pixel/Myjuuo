@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import { posts } from '../data/posts';
@@ -7,13 +7,19 @@ import './Post.css';
 
 const Post = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const post = posts.find((p) => p.id === parseInt(id));
+
+  const handleBack = () => {
+    navigate('/blog', { state: { fromCategory: location.state?.fromCategory } });
+  };
 
   if (!post) {
     return (
       <PageTransition className="post-container">
         <div className="back-link">
-          <Link to="/blog" className="text-neon-cyan"><ArrowLeft size={16} /> Back to Blog</Link>
+          <span onClick={handleBack} className="text-neon-cyan" style={{cursor:'pointer', display:'inline-flex', alignItems:'center', gap:'0.5rem'}}><ArrowLeft size={16} /> Back to Blog</span>
         </div>
         <article className="post-content glass" style={{ textAlign: 'center', padding: '4rem' }}>
           <h2>Post Not Found</h2>
@@ -25,7 +31,7 @@ const Post = () => {
   return (
     <PageTransition className="post-container">
       <div className="back-link">
-        <Link to="/blog" className="text-neon-cyan"><ArrowLeft size={16} /> Back to Blog</Link>
+        <span onClick={handleBack} className="text-neon-cyan" style={{cursor:'pointer', display:'inline-flex', alignItems:'center', gap:'0.5rem'}}><ArrowLeft size={16} /> Back to Blog</span>
       </div>
       <article className="post-content glass">
         <header className="post-header-detail">

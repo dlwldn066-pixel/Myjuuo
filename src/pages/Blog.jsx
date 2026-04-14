@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import { posts } from '../data/posts';
 import './Blog.css';
@@ -13,7 +13,9 @@ const categoryOrder = [
 ];
 
 const Blog = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [selectedCategory, setSelectedCategory] = useState(location.state?.fromCategory || 'All');
 
   // Group posts dynamically based on `categoryOrder`
   const groupedPosts = useMemo(() => {
@@ -76,10 +78,12 @@ const Blog = () => {
           {displayedPosts.map((post, index) => (
             <motion.div 
               key={post.id}
+              onClick={() => navigate(`/blog/${post.id}`, { state: { fromCategory: selectedCategory } })}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: (index % 10) * 0.05, duration: 0.5, ease: "easeOut" }}
               className={`blog-bento-card glass ${post.isLarge && selectedCategory === 'All' ? 'blog-large' : 'blog-normal'}`}
+              style={{ cursor: 'pointer' }}
               whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.8)" }}
             >
               {/* Aesthetic background using real images if available */}
@@ -105,9 +109,9 @@ const Blog = () => {
                 </div>
 
                 <div className="blog-card-footer">
-                  <Link to={`/blog/${post.id}`} className="read-more-bento text-neon-cyan">
+                  <span className="read-more-bento text-neon-cyan" style={{ pointerEvents: 'none' }}>
                     자세히 읽기 <ArrowUpRight size={18} />
-                  </Link>
+                  </span>
                 </div>
               </div>
             </motion.div>
