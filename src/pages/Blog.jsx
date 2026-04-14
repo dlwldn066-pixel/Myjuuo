@@ -73,47 +73,60 @@ const Blog = () => {
         >
           {selectedCategory === 'All' ? (
             /* ALL: Render classic Bento Grid for preview */
-            <div className="blog-bento-grid">
-              {displayedPosts.map((post, index) => (
-                <motion.div 
-                  key={post.id}
-                  onClick={() => navigate(`/blog/${post.id}`, { state: { fromCategory: selectedCategory } })}
-                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ delay: (index % 10) * 0.05, duration: 0.5, ease: "easeOut" }}
-                  className={`blog-bento-card glass ${post.isLarge ? 'blog-large' : 'blog-normal'}`}
-                  style={{ cursor: 'pointer' }}
-                  whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.8)" }}
-                >
-                  {post.images && post.images.length > 0 ? (
-                    <div className="blog-mock-bg" style={{ backgroundImage: `url(${post.images[0]})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.4 }}></div>
-                  ) : (
-                    <div className={`blog-mock-bg bg-gradient-${(post.id % 6) + 1}`}></div>
-                  )}
-                  
-                  <div className="blog-card-content">
-                    <div className="blog-card-header">
-                      <span className="post-date"><Calendar size={14} /> {post.date}</span>
-                      <div className="bento-tags-wrapper">
-                        {post.tags.map(tag => (
-                          <span key={tag} className="bento-tag blog-tag-capsule">{tag}</span>
-                        ))}
+            <div className="blog-bento-grid" style={{ alignItems: 'start' }}>
+              {displayedPosts.map((post, index) => {
+                // Dynamic zigzag staggered offset calculations! 
+                // Since it's a 5-column grid, we offset by column index to make them float naturally.
+                const staggerOffsets = [0, 50, 15, 65, -15];
+                const marginTopPx = staggerOffsets[index % 5];
+
+                return (
+                  <motion.div 
+                    key={post.id}
+                    onClick={() => navigate(`/blog/${post.id}`, { state: { fromCategory: selectedCategory } })}
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ delay: (index % 10) * 0.05, duration: 0.5, ease: "easeOut" }}
+                    className={`blog-bento-card glass ${post.isLarge ? 'blog-large' : 'blog-normal'}`}
+                    style={{ 
+                      cursor: 'pointer', 
+                      marginTop: `${marginTopPx}px`,
+                      height: '300px', /* Fix height so margin-top doesn't squish elements during stretch */
+                      border: 'none', /* Forcing border removal inline if CSS fails */
+                      background: 'rgba(12, 12, 18, 0.4)'
+                    }}
+                    whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.8)" }}
+                  >
+                    {post.images && post.images.length > 0 ? (
+                      <div className="blog-mock-bg" style={{ backgroundImage: `url(${post.images[0]})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.4 }}></div>
+                    ) : (
+                      <div className={`blog-mock-bg bg-gradient-${(post.id % 6) + 1}`}></div>
+                    )}
+                    
+                    <div className="blog-card-content" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 80%)' }}>
+                      <div className="blog-card-header">
+                        <span className="post-date"><Calendar size={14} /> {post.date}</span>
+                        <div className="bento-tags-wrapper">
+                          {post.tags.map(tag => (
+                            <span key={tag} className="bento-tag blog-tag-capsule">{tag}</span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="blog-card-body">
+                        <h2 className="post-bento-title">{post.title}</h2>
+                        <p className="post-bento-excerpt">{post.excerpt}</p>
+                      </div>
+
+                      <div className="blog-card-footer">
+                        <span className="read-more-bento text-neon-cyan" style={{ pointerEvents: 'none' }}>
+                          자세히 읽기 <ArrowUpRight size={18} />
+                        </span>
                       </div>
                     </div>
-                    
-                    <div className="blog-card-body">
-                      <h2 className="post-bento-title">{post.title}</h2>
-                      <p className="post-bento-excerpt">{post.excerpt}</p>
-                    </div>
-
-                    <div className="blog-card-footer">
-                      <span className="read-more-bento text-neon-cyan" style={{ pointerEvents: 'none' }}>
-                        자세히 읽기 <ArrowUpRight size={18} />
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           ) : (
             /* THEME: Render Edge-to-Edge 5-Column Accordion Layout! */
