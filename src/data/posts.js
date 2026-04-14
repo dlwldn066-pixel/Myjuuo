@@ -57,7 +57,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "/school-bg.png"
+      "/school-1.png"
     ],
     "music": null,
     "category": "School"
@@ -120,7 +120,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "/school-bg.png"
+      "/school-2.png"
     ],
     "music": null,
     "category": "School"
@@ -141,7 +141,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "/school-bg.png"
+      "/school-3.png"
     ],
     "music": null,
     "category": "School"
@@ -162,7 +162,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "/school-bg.png"
+      "/school-4.png"
     ],
     "music": null,
     "category": "School"
@@ -204,7 +204,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "/school-bg.png"
+      "/school-5.png"
     ],
     "music": null,
     "category": "School"
