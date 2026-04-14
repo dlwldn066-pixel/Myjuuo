@@ -1,29 +1,60 @@
 /* Blog.css */
 .blog-container {
   padding-top: 2rem;
+  overflow-x: hidden; /* Necessary for edge-to-edge breakout layouts */
 }
 
+/* -------------------------------------- */
+/* 1. CATEGORY DROPDOWN NAV (Reverted)    */
+/* -------------------------------------- */
+.category-dropdown-nav {
+  display: flex;
+  flex-wrap: wrap; /* natural wrapping */
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 50;
+}
+
+.dropdown-toggle-btn, .dropdown-main-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary, #fff);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.dropdown-toggle-btn:hover, .dropdown-main-btn:hover,
+.dropdown-toggle-btn.active, .dropdown-main-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* -------------------------------------- */
+/* 2. CLASSIC BENTO GRID (For 'All')      */
+/* -------------------------------------- */
 .blog-bento-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5-column split! */
-  grid-auto-rows: 300px; /* Slightly shorter so they maintain nice ratios when narrow */
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 360px;
+  gap: 2rem;
   margin-top: 3rem;
   grid-auto-flow: dense;
 }
 
-@media (max-width: 1400px) {
-  .blog-bento-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 1100px) {
+@media (min-width: 900px) {
   .blog-bento-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 
 .blog-bento-card {
   position: relative;
@@ -52,13 +83,12 @@
   }
 }
 
-/* Background mock visuals to match Gallery's 'hip' vibes */
 .blog-mock-bg {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: 0;
-  opacity: 0.2; /* Subdued for readable text */
+  opacity: 0.2;
   transition: opacity 0.4s ease;
 }
 
@@ -87,7 +117,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: auto; /* Push content down */
+  margin-bottom: auto;
 }
 
 .post-date {
@@ -109,7 +139,6 @@
   align-items: flex-end;
 }
 
-/* Reusing gallery capsule tag style for consistency */
 .blog-tag-capsule {
   font-size: 0.7rem;
   font-weight: 800;
@@ -129,7 +158,7 @@
 }
 
 .post-bento-title {
-  font-size: clamp(1.1rem, 2vw, 1.25rem); /* Scaled down slightly to fit 5 columns tightly */
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
   font-weight: 800;
   margin-bottom: 0.5rem;
   line-height: 1.4;
@@ -139,7 +168,7 @@
 }
 
 .blog-large .post-bento-title {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
 }
 
 .post-bento-excerpt {
@@ -154,10 +183,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 0;
-}
-
-.blog-large .post-bento-excerpt {
-  font-size: 1.15rem;
 }
 
 .blog-card-footer {
@@ -177,112 +202,140 @@
   transform: translateX(5px);
 }
 
-/* Category Dropdown Navigation styles */
-.category-filter-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 4rem; /* Ensure plenty of space before cards */
-  width: 100%;
+/* -------------------------------------- */
+/* 3. ACCORDION (Vertical Split Screen)   */
+/* -------------------------------------- */
+.blog-accordion-layout {
   position: relative;
-  z-index: 50; /* Above Bento Grid */
-}
-
-.category-main-btn-container {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: row;
+  width: 100vw;
+  height: 75vh;
+  min-height: 600px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  background: #000;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
-.category-dropdown-nav {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Exact 5-column layout */
-  gap: 1rem;
-  width: 100%;
+/* Responsive fallback for mobile */
+@media (max-width: 900px) {
+  .blog-accordion-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+}
+
+.accordion-panel {
+  flex: 1; /* 5 columns equally split */
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  border-right: 1px solid rgba(255, 255, 255, 0.05); /* very subtle divider */
 }
 
 @media (max-width: 900px) {
-  .category-dropdown-nav {
-    grid-template-columns: repeat(3, 1fr);
+  .accordion-panel {
+    width: 100%;
+    height: 250px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 }
 
-@media (max-width: 600px) {
-  .category-dropdown-nav {
-    grid-template-columns: repeat(2, 1fr);
+/* Hover expansion */
+.accordion-panel:hover {
+  flex: 2; /* Doubles in width to reveal content */
+}
+
+@media (max-width: 900px) {
+  .accordion-panel:hover {
+    flex: 1;
+    height: 350px;
   }
 }
 
-.dropdown-toggle-btn, .dropdown-main-btn {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-primary, #fff);
-  padding: 0.8rem 1rem;
-  border-radius: 16px; /* Slightly squared pill for neat grid alignment */
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  backdrop-filter: blur(10px);
-  width: 100%;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.dropdown-main-btn {
-  width: auto;
-  min-width: 200px;
-  border-radius: 30px; /* Main button stays pill-shaped */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.dropdown-toggle-btn:hover, .dropdown-main-btn:hover,
-.dropdown-toggle-btn.active, .dropdown-main-btn.active {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-.dropdown-menu {
+.accordion-bg {
   position: absolute;
-  top: 120%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  opacity: 0;
-  visibility: hidden;
-  background: rgba(15, 15, 15, 0.9);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  padding: 0.5rem;
-  min-width: 200px;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 0;
+}
+
+.accordion-panel:hover .accordion-bg {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.accordion-content {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  backdrop-filter: blur(15px);
+  justify-content: flex-end; /* Pin to bottom */
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 100%);
+  z-index: 1;
 }
 
-.dropdown-container:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+.accordion-meta {
+  margin-bottom: 1rem;
+  opacity: 1; /* Keep visible so the user knows it's a post */
+  transition: opacity 0.4s;
 }
 
-.dropdown-item {
-  padding: 0.8rem 1rem;
-  color: #ccc;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.2s;
-  text-align: center;
-  font-weight: 500;
-}
-
-.dropdown-item:hover {
-  background: rgba(255, 255, 255, 0.1);
+.accordion-title {
+  font-size: clamp(1.8rem, 3.5vw, 3.5rem); /* Extremely bold */
+  font-weight: 800;
+  line-height: 1.1;
   color: #fff;
-  transform: translateX(4px);
+  margin: 0 0 1rem 0;
+  word-break: keep-all;
+  white-space: normal; /* Allow wrapping */
 }
 
+.accordion-excerpt {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0 0 1.5rem 0;
+  
+  /* Start hidden or truncated strongly */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.accordion-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0;
+  max-height: 0;
+  transition: max-height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
+}
+
+/* On hover, reveal the excerpt and read more link */
+.accordion-panel:hover .accordion-excerpt,
+.accordion-panel:hover .accordion-read-more {
+  opacity: 1;
+  max-height: 200px; /* arbitrary height to allow expansion */
+}
