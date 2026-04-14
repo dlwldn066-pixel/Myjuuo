@@ -45,25 +45,29 @@ const Blog = () => {
       <h1 className="page-title text-gradient" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800 }}>지우의 기록</h1>
       <p className="page-subtitle" style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>나의 일상, 생각, 그리고 작은 조각들을 모아두는 곳.</p>
 
-      {/* Category Filter Navigation */}
-      <nav className="category-dropdown-nav">
-        <button 
-          className={`dropdown-main-btn ${selectedCategory === 'All' ? 'active' : ''}`}
-          onClick={() => setSelectedCategory('All')}
-        >
-          All (미리보기)
-        </button>
-        
-        {categoryOrder.map(cat => (
+      {/* Category Filter Navigation - 5-Column Grid Layout */}
+      <div className="category-filter-wrapper">
+        <div className="category-main-btn-container">
           <button 
-            key={cat}
-            className={`dropdown-toggle-btn ${selectedCategory === cat ? 'active' : ''}`}
-            onClick={() => setSelectedCategory(cat)}
+            className={`dropdown-main-btn ${selectedCategory === 'All' ? 'active' : ''}`}
+            onClick={() => setSelectedCategory('All')}
           >
-            {cat}
+            기본 / All (미리보기)
           </button>
-        ))}
-      </nav>
+        </div>
+        
+        <nav className="category-dropdown-nav">
+          {categoryOrder.map(cat => (
+            <button 
+              key={cat}
+              className={`dropdown-toggle-btn ${selectedCategory === cat ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </nav>
+      </div>
 
       {/* Bento Grid with Filter Transitions */}
       <AnimatePresence mode="wait">
