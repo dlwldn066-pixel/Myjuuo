@@ -1,7 +1,6 @@
 /* Blog.css */
 .blog-container {
   padding-top: 2rem;
-  overflow-x: hidden; /* Necessary for edge-to-edge breakout layouts */
 }
 
 /* -------------------------------------- */
@@ -212,10 +211,8 @@
   width: 100vw;
   height: 75vh;
   min-height: 600px;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   overflow: hidden;
   background: #000;
   margin-top: 2rem;
@@ -233,11 +230,12 @@
 
 .accordion-panel {
   flex: 1; /* 5 columns equally split */
+  min-width: 0; /* CRITICAL: prevents flex items from overflowing container due to long text */
   position: relative;
   overflow: hidden;
   transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
-  border-right: 1px solid rgba(255, 255, 255, 0.05); /* very subtle divider */
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 @media (max-width: 900px) {
@@ -296,13 +294,13 @@
 }
 
 .accordion-title {
-  font-size: clamp(1.8rem, 3.5vw, 3.5rem); /* Extremely bold */
+  font-size: clamp(1.2rem, 2.5vw, 2.5rem); /* Scaled down slightly to fit 5 narrow columns nicely */
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.2;
   color: #fff;
   margin: 0 0 1rem 0;
   word-break: keep-all;
-  white-space: normal; /* Allow wrapping */
+  white-space: pre-wrap; /* Allows breaking nicely */
 }
 
 .accordion-excerpt {
