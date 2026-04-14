@@ -16,7 +16,7 @@ const ParallaxParticles = () => {
   const location = useLocation();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  const hideStars = location.pathname.startsWith('/music') || location.pathname.startsWith('/blog/');
+  const isHomeRoute = location.pathname === '/';
 
   // Far layer has small, dim, numerous stars.
   const farStars = useMemo(() => generateStars(120, 0.4), []);
@@ -26,7 +26,11 @@ const ParallaxParticles = () => {
   const nearStars = useMemo(() => generateStars(30, 0.9), []);
 
   useEffect(() => {
-    if (hideStars) return;
+    // If we are not on the home page, reset position and don't animate to make it static
+    if (!isHomeRoute) {
+      setMousePos({ x: 0, y: 0 });
+      return;
+    }
 
     let animationFrameId;
     let targetX = 0;
@@ -57,9 +61,7 @@ const ParallaxParticles = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [hideStars]);
-
-  if (hideStars) return null;
+  }, [isHomeRoute]);
 
   const renderLayer = (stars, speedStr, layerClass) => (
     <div 
