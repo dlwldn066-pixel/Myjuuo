@@ -57,16 +57,16 @@ const Post = () => {
       <div className="post-reading-container">
         <article className="post-reading-body">
           {post.content.map((text, idx) => (
-            <p key={idx} className="post-paragraph">{text}</p>
+            <React.Fragment key={idx}>
+              <p className="post-paragraph">{text}</p>
+              {/* Inject Image 1 after paragraph 1, Image 2 after paragraph 2 */}
+              {post.images && post.images.length > idx + 1 && idx < 2 && (
+                <div style={{ margin: '3rem 0' }}>
+                  <img src={post.images[idx + 1]} alt="Post visual" className="post-inline-image" />
+                </div>
+              )}
+            </React.Fragment>
           ))}
-          
-          {post.images.length > 1 && (
-            <div className="post-extra-images">
-              {post.images.slice(1).map((img, idx) => (
-                <img key={idx} src={img} alt="Post visual" className="post-inline-image" />
-              ))}
-            </div>
-          )}
 
           {post.music && (
             <div className="inline-music-player glass" style={{ flexDirection: 'column', padding: '1.5rem', marginTop: '4rem' }}>
