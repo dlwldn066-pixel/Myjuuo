@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
+import CustomAudioPlayer from '../components/CustomAudioPlayer';
 import { posts } from '../data/posts';
 import './Post.css';
 
@@ -69,23 +70,19 @@ const Post = () => {
           ))}
 
           {post.music && (
-            <div className="inline-music-player glass" style={{ flexDirection: 'column', padding: '1.5rem', marginTop: '4rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%', marginBottom: '1rem' }}>
-                <div className="inline-disk-wrapper">
-                  <img src={post.music.cover} alt="album" className="spin-disk" />
-                  <div className="disk-hole"></div>
+            <div className="inline-music-player-container" style={{ marginTop: '5rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%', marginBottom: '2rem' }}>
+                <div className="inline-disk-wrapper" style={{ border: '3px solid #111', borderRadius: '50%', overflow: 'hidden', width: '70px', height: '70px', position: 'relative' }}>
+                  <img src={post.music.cover} alt="album" style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="spin-disk" />
+                  <div className="disk-hole" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '12px', height: '12px', background: '#111', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.2)' }}></div>
                 </div>
                 <div className="inline-music-info" style={{ textAlign: 'left' }}>
-                  <div className="now-playing-label text-neon-cyan">Now Playing</div>
-                  <h4 style={{ margin: '0.2rem 0', fontSize: '1.2rem' }}>{post.music.title}</h4>
-                  <p style={{ margin: 0, color: '#aaa', fontSize: '0.9rem' }}>{post.music.artist}</p>
+                  <div className="now-playing-label text-neon-cyan" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.3rem' }}>Now Playing</div>
+                  <h4 style={{ margin: '0 0 0.2rem 0', fontSize: '1.3rem' }}>{post.music.title}</h4>
+                  <p style={{ margin: 0, color: '#aaa', fontSize: '0.95rem' }}>{post.music.artist}</p>
                 </div>
               </div>
-              <audio 
-                src={post.music.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"} 
-                controls 
-                style={{ width: '100%', outline: 'none', borderRadius: '30px' }} 
-              />
+              <CustomAudioPlayer src={post.music.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"} />
             </div>
           )}
         </article>
