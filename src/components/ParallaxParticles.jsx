@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import './ParallaxParticles.css';
 
 // Randomly generate stars to avoid expensive DOM writes, only done once on mount
@@ -12,7 +13,10 @@ const generateStars = (count, maxOpacity) => {
 };
 
 const ParallaxParticles = () => {
+  const location = useLocation();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const hideStars = location.pathname.startsWith('/music') || location.pathname.startsWith('/blog/');
 
   // Far layer has small, dim, numerous stars.
   const farStars = useMemo(() => generateStars(120, 0.4), []);
@@ -22,11 +26,13 @@ const ParallaxParticles = () => {
   const nearStars = useMemo(() => generateStars(30, 0.9), []);
 
   useEffect(() => {
+    if (hideStars) return;
+
     let animationFrameId;
     let targetX = 0;
     let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
+    let currentX = mousePos.x;
+    let currentY = mousePos.y;
 
     const handleMouseMove = (e) => {
       // Normalize from -1 to 1 based on screen center
@@ -51,7 +57,9 @@ const ParallaxParticles = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [hideStars]);
+
+  if (hideStars) return null;
 
   const renderLayer = (stars, speedStr, layerClass) => (
     <div 
