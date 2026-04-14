@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowUpRight } from 'lucide-react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Calendar, ArrowRight } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import { posts } from '../data/posts';
 import './Blog.css';
@@ -20,7 +20,6 @@ const Blog = () => {
   // Group posts dynamically based on `categoryOrder`
   const groupedPosts = useMemo(() => {
     const groups = {};
-    // Initialize groups in correct order
     categoryOrder.forEach(cat => groups[cat] = []);
     posts.forEach(post => {
       if (groups[post.category]) {
@@ -30,11 +29,10 @@ const Blog = () => {
     return groups;
   }, []);
 
-  // Filter posts to display in the Bento Grid
+  // Filter posts to display
   const displayedPosts = useMemo(() => {
     if (selectedCategory === 'All') {
-      // Return a "Preview Curation" of ~10 items 
-      // (grabbing exactly the first item from each category)
+      // Preview Curation
       return categoryOrder.map(cat => groupedPosts[cat][0]).filter(Boolean);
     }
     return groupedPosts[selectedCategory] || [];
@@ -42,77 +40,77 @@ const Blog = () => {
 
   return (
     <PageTransition className="blog-container">
-      <h1 className="page-title text-gradient" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800 }}>지우의 기록</h1>
-      <p className="page-subtitle" style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>나의 일상, 생각, 그리고 작은 조각들을 모아두는 곳.</p>
+      <div className="blog-header-container">
+        <h1 className="page-title text-gradient" style={{ fontSize: 'clamp(3.5rem, 7vw, 6rem)', fontWeight: 900, marginBottom: '1rem' }}>지우의 기록</h1>
+        <p className="page-subtitle" style={{ fontSize: '1.25rem', marginBottom: '3rem', color: '#aaa' }}>작은 감정의 조각부터 거대한 일상의 시퀀스까지, 나의 모든 여정</p>
 
-      {/* Category Filter Navigation */}
-      <nav className="category-dropdown-nav">
-        <button 
-          className={`dropdown-main-btn ${selectedCategory === 'All' ? 'active' : ''}`}
-          onClick={() => setSelectedCategory('All')}
-        >
-          All (미리보기)
-        </button>
-        
-        {categoryOrder.map(cat => (
+        {/* Category Filter Navigation */}
+        <nav className="category-dropdown-nav">
           <button 
-            key={cat}
-            className={`dropdown-toggle-btn ${selectedCategory === cat ? 'active' : ''}`}
-            onClick={() => setSelectedCategory(cat)}
+            className={`dropdown-main-btn ${selectedCategory === 'All' ? 'active' : ''}`}
+            onClick={() => setSelectedCategory('All')}
           >
-            {cat}
+            All (에디터 추천)
           </button>
-        ))}
-      </nav>
+          
+          {categoryOrder.map(cat => (
+            <button 
+              key={cat}
+              className={`dropdown-toggle-btn ${selectedCategory === cat ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </nav>
+      </div>
 
-      {/* Bento Grid with Filter Transitions */}
+      {/* Full-Screen Edge-to-Edge Cinematic Feed */}
       <AnimatePresence mode="wait">
         <motion.div 
           key={selectedCategory}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="blog-bento-grid"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          className="blog-fullscreen-feed"
         >
           {displayedPosts.map((post, index) => (
             <motion.div 
               key={post.id}
               onClick={() => navigate(`/blog/${post.id}`, { state: { fromCategory: selectedCategory } })}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: (index % 10) * 0.05, duration: 0.5, ease: "easeOut" }}
-              className={`blog-bento-card glass ${post.isLarge && selectedCategory === 'All' ? 'blog-large' : 'blog-normal'}`}
-              style={{ cursor: 'pointer' }}
-              whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.8)" }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="blog-fullscreen-card"
             >
-              {/* Aesthetic background using real images if available */}
+              {/* Cinematic full-width background */}
               {post.images && post.images.length > 0 ? (
-                <div className="blog-mock-bg" style={{ backgroundImage: `url(${post.images[0]})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.4 }}></div>
+                <div className="blog-mock-bg" style={{ backgroundImage: `url(${post.images[0]})` }}></div>
               ) : (
                 <div className={`blog-mock-bg bg-gradient-${(post.id % 6) + 1}`}></div>
               )}
               
+              <div className="blog-card-overlay"></div>
+              
+              {/* Layered Text Content */}
               <div className="blog-card-content">
-                <div className="blog-card-header">
-                  <span className="post-date"><Calendar size={14} /> {post.date}</span>
+                <div className="blog-card-meta">
+                  <span className="post-date"><Calendar size={16} /> {post.date}</span>
                   <div className="bento-tags-wrapper">
                     {post.tags.map(tag => (
-                      <span key={tag} className="bento-tag blog-tag-capsule">{tag}</span>
+                      <span key={tag} className="blog-tag-capsule">{tag}</span>
                     ))}
                   </div>
                 </div>
                 
-                <div className="blog-card-body">
-                  <h2 className="post-bento-title">{post.title}</h2>
-                  <p className="post-bento-excerpt">{post.excerpt}</p>
-                </div>
-
-                <div className="blog-card-footer">
-                  <span className="read-more-bento text-neon-cyan" style={{ pointerEvents: 'none' }}>
-                    자세히 읽기 <ArrowUpRight size={18} />
-                  </span>
-                </div>
+                <h2 className="post-bento-title">{post.title}</h2>
+                <p className="post-bento-excerpt">{post.excerpt || post.content[0]}</p>
+                
+                <span className="read-more-bento text-neon-cyan">
+                  기록 열어보기 <ArrowRight size={20} />
+                </span>
               </div>
             </motion.div>
           ))}
