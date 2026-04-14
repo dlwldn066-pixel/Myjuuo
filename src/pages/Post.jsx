@@ -2,10 +2,25 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
+import { posts } from '../data/posts';
 import './Post.css';
 
 const Post = () => {
   const { id } = useParams();
+  const post = posts.find((p) => p.id === parseInt(id));
+
+  if (!post) {
+    return (
+      <PageTransition className="post-container">
+        <div className="back-link">
+          <Link to="/blog" className="text-neon-cyan"><ArrowLeft size={16} /> Back to Blog</Link>
+        </div>
+        <article className="post-content glass" style={{ textAlign: 'center', padding: '4rem' }}>
+          <h2>Post Not Found</h2>
+        </article>
+      </PageTransition>
+    );
+  }
 
   return (
     <PageTransition className="post-container">
@@ -14,29 +29,48 @@ const Post = () => {
       </div>
       <article className="post-content glass">
         <header className="post-header-detail">
-          <div className="post-meta"><Calendar size={14} /> 2026-03-31</div>
-          <h1 className="post-title-detail text-gradient">Detailed Post View #{id}</h1>
+          <div className="post-meta"><Calendar size={14} /> {post.date}</div>
+          <h1 className="post-title-detail text-gradient">{post.title}</h1>
           <div className="post-pills">
-            <span className="post-pill">Story</span>
-            <span className="post-pill">Life</span>
+            {post.tags.map(tag => (
+              <span key={tag} className="post-pill">{tag}</span>
+            ))}
           </div>
         </header>
 
         <section className="post-body">
-          <p>
-            Welcome to the detailed view of the post. This is where the magic happens. 
-            Code, life, bugs, and coffee - all merged into this neon light.
-          </p>
-          <h2>The Journey</h2>
-          <p>
-            When I first started to code, I never thought I would be creating dynamic pages using 
-            Framer Motion and React. The mesh gradients and glass effects really bring the site to life.
-            Every pixel is intentionally placed.
-          </p>
-          <div className="content-mock-img bg-2"></div>
+          {post.content.map((text, idx) => (
+            <p key={idx}>{text}</p>
+          ))}
+          
+          <div className="post-images-grid" style={{
+            display: 'grid', 
+            gridTemplateColumns: `repeat(${post.images.length > 1 ? 2 : 1}, 1fr)`, 
+            gap: '1rem', 
+            margin: '2rem 0'
+          }}>
+            {post.images.map((img, idx) => (
+              <div key={idx} className="content-mock-img" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '300px', borderRadius: '16px' }}></div>
+            ))}
+          </div>
+
+          {post.music && (
+            <div className="inline-music-player glass">
+              <div className="inline-disk-wrapper">
+                <img src={post.music.cover} alt="album" className="spin-disk" />
+                <div className="disk-hole"></div>
+              </div>
+              <div className="inline-music-info">
+                <div className="now-playing-label">Now Playing</div>
+                <h4>{post.music.title}</h4>
+                <p>{post.music.artist}</p>
+              </div>
+            </div>
+          )}
         </section>
       </article>
     </PageTransition>
   );
 };
+
 export default Post;

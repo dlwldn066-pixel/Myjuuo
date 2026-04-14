@@ -19,9 +19,9 @@ const Music = () => {
     <PageTransition className="music-page-container">
       <div className="music-header">
         <h1 className="title">
-          Midnight <span className="text-neon-orange">Vinyl</span>
+          Today's <span className="text-neon-orange">Music</span>
         </h1>
-        <p className="subtitle text-secondary">A curated collection of deep R&B and late-night vibes.</p>
+        <p className="subtitle text-secondary">A curated collection of my favorite tracks for today.</p>
       </div>
 
       <div className="music-content-wrapper">
