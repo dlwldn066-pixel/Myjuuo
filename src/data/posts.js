@@ -15,7 +15,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1493225457124-a1a2a5f5f924?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Past"
@@ -36,7 +36,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1506526830508-e8db3041bcbb?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Past"
@@ -57,7 +57,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1544641977-bda50275846b?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "School"
@@ -78,7 +78,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1506526830508-e8db3041bcbb?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Past"
@@ -99,7 +99,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1493225457124-a1a2a5f5f924?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Past"
@@ -120,7 +120,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517048676732-d6807d134f4c?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "School"
@@ -141,7 +141,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1544641977-bda50275846b?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "School"
@@ -162,7 +162,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517048676732-d6807d134f4c?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "School"
@@ -183,7 +183,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1493225457124-a1a2a5f5f924?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Past"
@@ -204,7 +204,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517048676732-d6807d134f4c?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "School"
@@ -225,7 +225,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1500516629983-9b8e8f85f543?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Daily"
@@ -246,7 +246,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1490122417551-eb159aca39af?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Routine"
@@ -267,7 +267,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1500516629983-9b8e8f85f543?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Daily"
@@ -288,7 +288,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1483163148421-2a1e64ebbaaa?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Daily"
@@ -309,7 +309,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1500516629983-9b8e8f85f543?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Daily"
@@ -330,7 +330,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1490122417551-eb159aca39af?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Routine"
@@ -351,7 +351,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1515377659632-47535b443208?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Routine"
@@ -372,7 +372,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1490122417551-eb159aca39af?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Routine"
@@ -393,7 +393,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1515377659632-47535b443208?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Routine"
@@ -414,7 +414,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1483163148421-2a1e64ebbaaa?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Daily"
@@ -435,7 +435,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Mood Music"
@@ -456,7 +456,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
     "music": {
       "title": "Vibing in On Repeat",
@@ -482,7 +482,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop"
     ],
     "music": {
       "title": "Vibing in My Artist",
@@ -508,7 +508,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Mood Music"
@@ -529,7 +529,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Mood Music"
@@ -550,7 +550,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Mood Music"
@@ -571,7 +571,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Mood Music"
@@ -592,7 +592,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
     ],
     "music": {
       "title": "Vibing in Album Mood",
@@ -618,7 +618,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
     "music": {
       "title": "Vibing in Hidden Track",
@@ -644,7 +644,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
     "music": {
       "title": "Vibing in My Playlist",
@@ -670,7 +670,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1523314545214-72210a402a4a?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Lifestyle"
@@ -691,7 +691,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Emotion"
@@ -712,7 +712,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1523314545214-72210a402a4a?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Lifestyle"
@@ -733,7 +733,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Emotion"
@@ -754,7 +754,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Emotion"
@@ -775,7 +775,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Emotion"
@@ -796,7 +796,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1523314545214-72210a402a4a?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Lifestyle"
@@ -817,7 +817,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1508215885820-4585e561081b?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Lifestyle"
@@ -838,7 +838,7 @@ export const posts = [
       "가끔은 멈춰 서서 하늘을 올려다보자."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1523314545214-72210a402a4a?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Lifestyle"
@@ -859,7 +859,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Emotion"
@@ -880,7 +880,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Self"
@@ -901,7 +901,7 @@ export const posts = [
       "나만의 리듬으로 살아간다는 것."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Future"
@@ -922,7 +922,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Future"
@@ -985,7 +985,7 @@ export const posts = [
       "오롯이 혼자만의 시간을 가지는 중."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Self"
@@ -1006,7 +1006,7 @@ export const posts = [
       "반복되는 일상 속에서 찾는 작은 변주."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Future"
@@ -1048,7 +1048,7 @@ export const posts = [
       "결국 중요한 건 포기하지 않는 마음."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Self"
@@ -1069,7 +1069,7 @@ export const posts = [
       "내일의 나를 위해 지금을 기록한다."
     ],
     "images": [
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
     "music": null,
     "category": "Future"
