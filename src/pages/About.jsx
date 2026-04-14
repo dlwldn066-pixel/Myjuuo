@@ -13,9 +13,10 @@ const About = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="about-image glass"
-          style={{ padding: 0, overflow: 'hidden' }}
         >
-          <img src="/cute-jiwoo.png" alt="Jiwoo Character" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <div className="placeholder-avatar">
+            <span className="text-neon-cyan">JIWOO</span>
+          </div>
         </motion.div>
         
         <motion.div 
