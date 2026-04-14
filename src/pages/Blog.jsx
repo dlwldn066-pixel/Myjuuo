@@ -64,21 +64,30 @@ const Blog = () => {
       </nav>
 
       {/* Bento Grid with Filter Transitions */}
-      <motion.div layout className="blog-bento-grid">
-        <AnimatePresence mode="popLayout">
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={selectedCategory}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="blog-bento-grid"
+        >
           {displayedPosts.map((post, index) => (
             <motion.div 
               key={post.id}
-              layout
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 10, transition: { duration: 0.2 } }}
-              transition={{ delay: (index % 10) * 0.05, duration: 0.4, ease: "easeOut" }}
+              transition={{ delay: (index % 10) * 0.05, duration: 0.5, ease: "easeOut" }}
               className={`blog-bento-card glass ${post.isLarge && selectedCategory === 'All' ? 'blog-large' : 'blog-normal'}`}
               whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.8)" }}
             >
-              {/* The aesthetic background pseudo-element is handled in CSS */}
-              <div className={`blog-mock-bg bg-gradient-${(post.id % 6) + 1}`}></div>
+              {/* Aesthetic background using real images if available */}
+              {post.images && post.images.length > 0 ? (
+                <div className="blog-mock-bg" style={{ backgroundImage: `url(${post.images[0]})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.4 }}></div>
+              ) : (
+                <div className={`blog-mock-bg bg-gradient-${(post.id % 6) + 1}`}></div>
+              )}
               
               <div className="blog-card-content">
                 <div className="blog-card-header">
@@ -103,8 +112,8 @@ const Blog = () => {
               </div>
             </motion.div>
           ))}
-        </AnimatePresence>
-      </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </PageTransition>
   );
 };

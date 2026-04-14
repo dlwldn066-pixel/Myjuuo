@@ -55,16 +55,23 @@ const Post = () => {
           </div>
 
           {post.music && (
-            <div className="inline-music-player glass">
-              <div className="inline-disk-wrapper">
-                <img src={post.music.cover} alt="album" className="spin-disk" />
-                <div className="disk-hole"></div>
+            <div className="inline-music-player glass" style={{ flexDirection: 'column', padding: '1.5rem', marginTop: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%', marginBottom: '1rem' }}>
+                <div className="inline-disk-wrapper">
+                  <img src={post.music.cover} alt="album" className="spin-disk" />
+                  <div className="disk-hole"></div>
+                </div>
+                <div className="inline-music-info" style={{ textAlign: 'left' }}>
+                  <div className="now-playing-label text-neon-cyan">Now Playing</div>
+                  <h4 style={{ margin: '0.2rem 0', fontSize: '1.2rem' }}>{post.music.title}</h4>
+                  <p style={{ margin: 0, color: '#aaa', fontSize: '0.9rem' }}>{post.music.artist}</p>
+                </div>
               </div>
-              <div className="inline-music-info">
-                <div className="now-playing-label">Now Playing</div>
-                <h4>{post.music.title}</h4>
-                <p>{post.music.artist}</p>
-              </div>
+              <audio 
+                src={post.music.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"} 
+                controls 
+                style={{ width: '100%', outline: 'none', borderRadius: '30px' }} 
+              />
             </div>
           )}
         </section>
