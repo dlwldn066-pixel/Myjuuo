@@ -40,10 +40,10 @@ const Blog = () => {
 
   return (
     <PageTransition className="blog-container">
-      <h1 className="page-title text-gradient" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800 }}>지우의 코딩 기록</h1>
-      <p className="page-subtitle" style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>삽질과 에러, 그리고 마침내 찾아오는 작은 성취의 순간들.</p>
+      <h1 className="page-title text-gradient" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800 }}>지우의 기록</h1>
+      <p className="page-subtitle" style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>나의 일상, 생각, 그리고 작은 조각들을 모아두는 곳.</p>
 
-      {/* Category Dropdown Navigation */}
+      {/* Category Filter Navigation */}
       <nav className="category-dropdown-nav">
         <button 
           className={`dropdown-main-btn ${selectedCategory === 'All' ? 'active' : ''}`}
@@ -53,21 +53,13 @@ const Blog = () => {
         </button>
         
         {categoryOrder.map(cat => (
-          <div key={cat} className="dropdown-container">
-            <button 
-              className={`dropdown-toggle-btn ${selectedCategory === cat ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat} ▼
-            </button>
-            <div className="dropdown-menu glass">
-              {groupedPosts[cat].map(p => (
-                <Link key={p.id} to={`/blog/${p.id}`} className="dropdown-item">
-                  {p.title}
-                </Link>
-              ))}
-            </div>
-          </div>
+          <button 
+            key={cat}
+            className={`dropdown-toggle-btn ${selectedCategory === cat ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </button>
         ))}
       </nav>
 
