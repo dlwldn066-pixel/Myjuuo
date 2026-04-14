@@ -17,51 +17,59 @@ const Post = () => {
 
   if (!post) {
     return (
-      <PageTransition className="post-container">
-        <div className="back-link">
-          <span onClick={handleBack} className="text-neon-cyan" style={{cursor:'pointer', display:'inline-flex', alignItems:'center', gap:'0.5rem'}}><ArrowLeft size={16} /> Back to Blog</span>
+      <PageTransition className="post-page-wrapper">
+        <div className="post-reading-container" style={{ textAlign: 'center', paddingTop: '10vh' }}>
+          <span onClick={handleBack} className="post-hero-back text-neon-cyan" style={{cursor:'pointer', display:'inline-flex', alignItems:'center', gap:'0.5rem', marginBottom: '2rem'}}>
+            <ArrowLeft size={16} /> 돌아가기
+          </span>
+          <h2>게시글을 찾을 수 없습니다.</h2>
         </div>
-        <article className="post-content glass" style={{ textAlign: 'center', padding: '4rem' }}>
-          <h2>Post Not Found</h2>
-        </article>
       </PageTransition>
     );
   }
 
   return (
-    <PageTransition className="post-container">
-      <div className="back-link">
-        <span onClick={handleBack} className="text-neon-cyan" style={{cursor:'pointer', display:'inline-flex', alignItems:'center', gap:'0.5rem'}}><ArrowLeft size={16} /> Back to Blog</span>
-      </div>
-      <article className="post-content glass">
-        <header className="post-header-detail">
-          <div className="post-meta"><Calendar size={14} /> {post.date}</div>
-          <h1 className="post-title-detail text-gradient">{post.title}</h1>
-          <div className="post-pills">
-            {post.tags.map(tag => (
-              <span key={tag} className="post-pill">{tag}</span>
-            ))}
+    <PageTransition className="post-page-wrapper">
+      {/* Immersive Hero Section */}
+      <div 
+        className="post-hero-section" 
+        style={{ backgroundImage: `url(${post.images[0]})` }}
+      >
+        <div className="post-hero-overlay">
+          <div className="post-hero-content">
+            <span onClick={handleBack} className="post-hero-back">
+              <ArrowLeft size={16} /> 목록으로 돌아가기
+            </span>
+            <div className="post-meta-hero">
+              <Calendar size={14} /> {post.date} &nbsp;&nbsp;|&nbsp;&nbsp; {post.category}
+            </div>
+            <h1 className="post-title-hero">{post.title}</h1>
+            <div className="post-tags-hero">
+              {post.tags.map(tag => (
+                <span key={tag} className="post-tag-hero">{tag}</span>
+              ))}
+            </div>
           </div>
-        </header>
+        </div>
+      </div>
 
-        <section className="post-body">
+      {/* Reading Content Area */}
+      <div className="post-reading-container">
+        <article className="post-reading-body">
           {post.content.map((text, idx) => (
-            <p key={idx}>{text}</p>
+            <p key={idx} className="post-paragraph">{text}</p>
           ))}
           
-          <div className="post-images-grid" style={{
-            display: 'grid', 
-            gridTemplateColumns: `repeat(${post.images.length > 1 ? 2 : 1}, 1fr)`, 
-            gap: '1rem', 
-            margin: '2rem 0'
-          }}>
-            {post.images.map((img, idx) => (
-              <div key={idx} className="content-mock-img" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '300px', borderRadius: '16px' }}></div>
-            ))}
-          </div>
+          {post.images.length > 1 && (
+            <div className="post-extra-images">
+              {post.images.slice(1).map((img, idx) => (
+                <img key={idx} src={img} alt="Post visual" className="post-inline-image" />
+              ))}
+            </div>
+          )}
 
           {post.music && (
-            <div className="inline-music-player glass" style={{ flexDirection: 'column', padding: '1.5rem', marginTop: '2rem' }}>
+            <div className="inline-music-player glass" style={{ flexDirection: 'column', padding: '1.5rem', marginTop: '4rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%', marginBottom: '1rem' }}>
                 <div className="inline-disk-wrapper">
                   <img src={post.music.cover} alt="album" className="spin-disk" />
@@ -80,8 +88,19 @@ const Post = () => {
               />
             </div>
           )}
-        </section>
-      </article>
+        </article>
+
+        {/* Elegant Footer */}
+        <div className="post-author-footer">
+          <div className="author-avatar-small">
+            <span className="text-neon-cyan" style={{ fontSize: '0.8rem', fontWeight: 800 }}>JIWOO</span>
+          </div>
+          <div className="author-details">
+            <h4 style={{ margin: '0 0 0.3rem 0', fontSize: '1.2rem' }}>지우 (Jiwoo)</h4>
+            <p style={{ margin: 0, color: '#aaa', fontSize: '0.95rem' }}>순간의 감정과 기억들을 모아두는 작은 공간.</p>
+          </div>
+        </div>
+      </div>
     </PageTransition>
   );
 };
