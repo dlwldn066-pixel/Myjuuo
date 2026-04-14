@@ -18,7 +18,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Past"
   },
   {
     "id": 2,
@@ -40,7 +41,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Past"
   },
   {
     "id": 3,
@@ -60,7 +62,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "School"
   },
   {
     "id": 4,
@@ -81,7 +84,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Past"
   },
   {
     "id": 5,
@@ -107,7 +111,8 @@ export const posts = [
       "title": "Neon Midnight",
       "artist": "Synth Riders",
       "cover": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Past"
   },
   {
     "id": 6,
@@ -127,7 +132,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "School"
   },
   {
     "id": 7,
@@ -148,7 +154,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "School"
   },
   {
     "id": 8,
@@ -170,7 +177,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "School"
   },
   {
     "id": 9,
@@ -190,7 +198,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Past"
   },
   {
     "id": 10,
@@ -215,7 +224,8 @@ export const posts = [
       "title": "Dreamy Clouds",
       "artist": "Lofi Girl",
       "cover": "https://images.unsplash.com/photo-1493225457124-a1a2a5f5f924?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "School"
   },
   {
     "id": 11,
@@ -237,7 +247,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Daily"
   },
   {
     "id": 12,
@@ -257,7 +268,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Routine"
   },
   {
     "id": 13,
@@ -278,7 +290,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Daily"
   },
   {
     "id": 14,
@@ -300,7 +313,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Daily"
   },
   {
     "id": 15,
@@ -324,7 +338,8 @@ export const posts = [
       "title": "Cosmic Journey",
       "artist": "Stardust",
       "cover": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Daily"
   },
   {
     "id": 16,
@@ -345,7 +360,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Routine"
   },
   {
     "id": 17,
@@ -367,7 +383,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Routine"
   },
   {
     "id": 18,
@@ -387,7 +404,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Routine"
   },
   {
     "id": 19,
@@ -408,7 +426,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Routine"
   },
   {
     "id": 20,
@@ -434,7 +453,8 @@ export const posts = [
       "title": "City Lights",
       "artist": "The Midnight",
       "cover": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Daily"
   },
   {
     "id": 21,
@@ -454,7 +474,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Mood Music"
   },
   {
     "id": 22,
@@ -475,7 +496,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Music Taste"
   },
   {
     "id": 23,
@@ -497,7 +519,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Music Taste"
   },
   {
     "id": 24,
@@ -517,7 +540,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Mood Music"
   },
   {
     "id": 25,
@@ -542,7 +566,8 @@ export const posts = [
       "title": "Lost in Space",
       "artist": "Apollo",
       "cover": "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Mood Music"
   },
   {
     "id": 26,
@@ -564,7 +589,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Mood Music"
   },
   {
     "id": 27,
@@ -584,7 +610,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Mood Music"
   },
   {
     "id": 28,
@@ -605,7 +632,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Music Taste"
   },
   {
     "id": 29,
@@ -627,7 +655,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Music Taste"
   },
   {
     "id": 30,
@@ -651,7 +680,8 @@ export const posts = [
       "title": "Neon Midnight",
       "artist": "Synth Riders",
       "cover": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Music Taste"
   },
   {
     "id": 31,
@@ -672,7 +702,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Lifestyle"
   },
   {
     "id": 32,
@@ -694,7 +725,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Emotion"
   },
   {
     "id": 33,
@@ -714,7 +746,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Lifestyle"
   },
   {
     "id": 34,
@@ -735,7 +768,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Emotion"
   },
   {
     "id": 35,
@@ -761,7 +795,8 @@ export const posts = [
       "title": "Dreamy Clouds",
       "artist": "Lofi Girl",
       "cover": "https://images.unsplash.com/photo-1493225457124-a1a2a5f5f924?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Emotion"
   },
   {
     "id": 36,
@@ -781,7 +816,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Emotion"
   },
   {
     "id": 37,
@@ -802,7 +838,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Lifestyle"
   },
   {
     "id": 38,
@@ -824,7 +861,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Lifestyle"
   },
   {
     "id": 39,
@@ -844,7 +882,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Lifestyle"
   },
   {
     "id": 40,
@@ -869,7 +908,8 @@ export const posts = [
       "title": "Cosmic Journey",
       "artist": "Stardust",
       "cover": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Emotion"
   },
   {
     "id": 41,
@@ -891,7 +931,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Self"
   },
   {
     "id": 42,
@@ -911,7 +952,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Future"
   },
   {
     "id": 43,
@@ -932,7 +974,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1481819613568-3701cbc70156?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Future"
   },
   {
     "id": 44,
@@ -954,7 +997,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Self"
   },
   {
     "id": 45,
@@ -978,7 +1022,8 @@ export const posts = [
       "title": "City Lights",
       "artist": "The Midnight",
       "cover": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Self"
   },
   {
     "id": 46,
@@ -999,7 +1044,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Self"
   },
   {
     "id": 47,
@@ -1021,7 +1067,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Future"
   },
   {
     "id": 48,
@@ -1041,7 +1088,8 @@ export const posts = [
     "images": [
       "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Future"
   },
   {
     "id": 49,
@@ -1062,7 +1110,8 @@ export const posts = [
       "https://images.unsplash.com/photo-1536697246787-1fddac2c1626?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
     ],
-    "music": null
+    "music": null,
+    "category": "Self"
   },
   {
     "id": 50,
@@ -1088,6 +1137,7 @@ export const posts = [
       "title": "Lost in Space",
       "artist": "Apollo",
       "cover": "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=500&auto=format&fit=crop"
-    }
+    },
+    "category": "Future"
   }
 ];
