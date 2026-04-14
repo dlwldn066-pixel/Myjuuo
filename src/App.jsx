@@ -37,7 +37,11 @@ function App() {
   return (
     <Router>
       {/* Dynamic Background */}
-      <div className="mesh-bg"></div>
+      <div className="mesh-bg">
+        <div className="mesh-bg-aurora-1"></div>
+        <div className="mesh-bg-aurora-2"></div>
+        <div className="mesh-bg-aurora-3"></div>
+      </div>
       
       <Navbar />
       <AnimatedRoutes />
