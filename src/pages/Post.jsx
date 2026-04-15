@@ -51,8 +51,10 @@ const Post = () => {
 
   return (
     <PageTransition className="post-page-wrapper">
-      {/* Inject dynamic cosmic aurora colors per theme globally representing the atmosphere */}
+      {/* Inject dynamic cosmic aurora colors per theme globally representing the atmosphere 
+          And explicitly hide the stars ONLY on the reading page per user request */}
       <style>{`
+        .parallax-particles-container { display: none !important; }
         .mesh-bg-aurora-1 { background: ${auroraColors[0]} !important; }
         .mesh-bg-aurora-2 { background: ${auroraColors[1]} !important; }
         .mesh-bg-aurora-3 { background: ${auroraColors[2]} !important; }

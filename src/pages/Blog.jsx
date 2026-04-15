@@ -56,10 +56,9 @@ const Blog = () => {
 
   return (
     <PageTransition className="blog-container">
-      {/* Hide stars and apply custom aurora colors when viewing specific theme */}
+      {/* Apply custom aurora colors when viewing specific theme */}
       {selectedCategory !== 'All' && activeColors && (
         <style>{`
-          .parallax-particles-container { display: none !important; }
           .mesh-bg-aurora-1 { background: ${activeColors[0]} !important; }
           .mesh-bg-aurora-2 { background: ${activeColors[1]} !important; }
           .mesh-bg-aurora-3 { background: ${activeColors[2]} !important; }
