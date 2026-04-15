@@ -81,34 +81,20 @@ const Post = () => {
         </div>
       </div>
 
-      {/* Reading Content Area (Magazine Layout) */}
+      {/* Reading Content Area */}
       <div className="post-reading-container">
         <article className="post-reading-body">
-          {post.content.map((text, idx) => {
-            const mod = idx % 3;
-            // Alternating asymmetrical alignments for Editorial "Free" Layout
-            let textAlignClass = "align-left";
-            if (mod === 1) textAlignClass = "align-right";
-            if (mod === 2) textAlignClass = "align-center";
-
-            return (
-              <React.Fragment key={idx}>
-                <p className={`post-paragraph ${textAlignClass}`}>
-                  <span className="quote-mark">“</span>
-                  {text}
-                </p>
-                
-                {/* Visual Interleaving with staggered image positions */}
-                {post.images && post.images.length > idx + 1 && idx < 2 && (
-                  <div className={`post-image-wrapper img-${textAlignClass}`}>
-                    <img src={post.images[idx + 1]} alt="Post visual" className="post-inline-image" />
-                    {/* Add subtle cosmic glow wrapping the image */}
-                    <div className="cosmic-glow" style={{ background: auroraColors[idx % 2] }}></div>
-                  </div>
-                )}
-              </React.Fragment>
-            );
-          })}
+          {post.content.map((text, idx) => (
+            <React.Fragment key={idx}>
+              <p className="post-paragraph">{text}</p>
+              {/* Inject Image 1 after paragraph 1, Image 2 after paragraph 2 */}
+              {post.images && post.images.length > idx + 1 && idx < 2 && (
+                <div style={{ margin: '3rem 0' }}>
+                  <img src={post.images[idx + 1]} alt="Post visual" className="post-inline-image" />
+                </div>
+              )}
+            </React.Fragment>
+          ))}
 
           {post.music && (
             <div className="inline-music-player-container" style={{ marginTop: '5rem', marginBottom: '2rem' }}>

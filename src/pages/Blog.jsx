@@ -12,6 +12,20 @@ const categoryOrder = [
   "Music Taste", "Lifestyle", "Emotion", "Self", "Future"
 ];
 
+// Dynamic Cosmic Nebula Palettes for each theme!
+const categoryCosmicColors = {
+  "Past": ["rgba(50, 70, 120, 0.45)", "rgba(100, 130, 200, 0.5)", "rgba(20, 40, 80, 0.4)"],
+  "School": ["rgba(255, 150, 50, 0.4)", "rgba(200, 80, 10, 0.5)", "rgba(120, 30, 10, 0.4)"],
+  "Daily": ["rgba(0, 200, 150, 0.45)", "rgba(0, 120, 100, 0.5)", "rgba(0, 255, 180, 0.3)"],
+  "Routine": ["rgba(150, 100, 255, 0.4)", "rgba(100, 50, 200, 0.5)", "rgba(50, 20, 150, 0.4)"],
+  "Mood Music": ["rgba(255, 50, 100, 0.45)", "rgba(200, 20, 150, 0.5)", "rgba(100, 0, 50, 0.4)"],
+  "Music Taste": ["rgba(255, 80, 50, 0.5)", "rgba(200, 10, 10, 0.5)", "rgba(255, 120, 0, 0.4)"],
+  "Lifestyle": ["rgba(20, 200, 255, 0.4)", "rgba(10, 100, 200, 0.5)", "rgba(0, 50, 150, 0.4)"],
+  "Emotion": ["rgba(255, 0, 80, 0.45)", "rgba(150, 0, 50, 0.5)", "rgba(255, 80, 150, 0.4)"],
+  "Self": ["rgba(80, 50, 150, 0.4)", "rgba(50, 20, 100, 0.5)", "rgba(150, 100, 255, 0.4)"],
+  "Future": ["rgba(0, 255, 200, 0.45)", "rgba(0, 150, 150, 0.5)", "rgba(0, 100, 255, 0.4)"]
+};
+
 const Blog = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,8 +52,20 @@ const Blog = () => {
     return groupedPosts[selectedCategory] || [];
   }, [selectedCategory, groupedPosts]);
 
+  const activeColors = categoryCosmicColors[selectedCategory];
+
   return (
     <PageTransition className="blog-container">
+      {/* Hide stars and apply custom aurora colors when viewing specific theme */}
+      {selectedCategory !== 'All' && activeColors && (
+        <style>{`
+          .parallax-particles-container { display: none !important; }
+          .mesh-bg-aurora-1 { background: ${activeColors[0]} !important; }
+          .mesh-bg-aurora-2 { background: ${activeColors[1]} !important; }
+          .mesh-bg-aurora-3 { background: ${activeColors[2]} !important; }
+        `}</style>
+      )}
+
       <h1 className="page-title text-gradient" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800 }}>지우의 기록</h1>
       <p className="page-subtitle" style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>나의 일상, 생각, 그리고 작은 조각들을 모아두는 곳.</p>
 
